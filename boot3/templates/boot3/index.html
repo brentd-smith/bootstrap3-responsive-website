@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+{% load staticfiles %}
+
+{% block content %}
+You have navigated to index.html good job.
+
+<!-- Container centers content in the browser and cuts of edges. -->
+<div class="container" id="main">
+	 <!-- <img src="{% static 'images/logo.png' %}" alt='logo' /> -->
+
+	<div class="navbar navbar-fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="/boot3"><img src="{% static 'images/logo.png' %}" alt='logo' /></a>
+			
+			<div class="nav-collapse collapse <navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/boot3">Home</a></li>
+					<li><a href="#">Services</a></li>
+				</ul>
+				
+				<form class="navbar-form pull-left">
+					<input type="text" id="searchInput" class="form-control" placeholder="Search this site...">
+					<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+				
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+				</ul>
+			</div>
+		</div>
+	</div> <!-- end navbar -->
+	
+	<div class="carousel slide" id="myCarousel">
+		
+	</div> <!-- end carousel -->
+	
+	<div class="row" id="bigCallout">
+		<!-- row acts as a container of 1 or more columns -->
+		
+	</div> <!-- end row -->
+	
+	<div class="row" id="featuresHeading">
+		
+	</div>
+	
+	<div class="row" id="features"></div>
+	
+	<div class="row" id="moreInfo"></div>
+	
+	<div class="row" id="moreCourses"></div>
+	
+</div> <!-- end container main -->
+
+<footer>
+	
+</footer>
+
+{% endblock %}
