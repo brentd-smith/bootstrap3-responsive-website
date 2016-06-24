@@ -295,18 +295,41 @@ You have navigated to index.html good job.
 										in futurum.</p>
 										
 										<h4>Popovers in a modal</h4>
-										<a href="#" class="btn btn-danger pop">Don't click me.</a>
+										<a id="modalPopup" href="#" class="btn btn-danger pop" data-toggle="popover" data-placement="top" 
+											data-original-title="You clicked it" data-content="I knew you would">Don't click me.</a>
 										
 										<h4>Tooltips in a modal</h4>
-										<a href="#">This link</a> should have a tooltip and so should <a href="#">this one</a>!
+										<a href="#" data-original-title="Tooltip" rel="tooltip">This link</a> should have a tooltip and so should <a href="#" data-original-title="Woohoo!" rel="tooltip">this one</a>!
 										
 										<hr>
 										<p><small class="text-muted">PS. This form doesn't do anything.</small></p>
 										
-										<form>
-											
-										</form>
-									
+									<form class="form-horizontal">
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="inputName">Name</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" name="inputName" placeholder="Your Name Here" />
+											</div>
+										</div>
+										
+									  <div class="form-group">
+									    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+									    <div class="col-sm-10">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+									    <div class="col-sm-10">
+									      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <div class="col-sm-12">
+									      <button type="submit" class="btn btn-default btn-success pull-right">Sign in</button>
+									    </div>
+									  </div>
+									</form>
 									</div> <!-- end modal body -->
 									
 									<div class="modal-footer">

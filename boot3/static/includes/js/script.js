@@ -24,4 +24,13 @@ $(function() {
         e.preventDefault();
         $('#successAlert').toggle("slow");
     });
+
+    //Prevent page from refreshing    
+    $('#modalPopup').click(function(e) {
+        e.preventDefault() ;
+    });
+    
+    $('#modalPopup').popover();
+    
+    $('[rel="tooltip"]').tooltip();
 });
