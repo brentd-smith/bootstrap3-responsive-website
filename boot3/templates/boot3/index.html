@@ -10,12 +10,31 @@ You have navigated to index.html good job.
 
 	<div class="navbar navbar-fixed-top">
 		<div class="container">
+			<button type="button" class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
 			<a class="navbar-brand" href="/boot3"><img src="{% static 'images/logo.png' %}" alt='logo' /></a>
 			
-			<div class="nav-collapse collapse <navbar-responsive-collapse">
+			<div class="nav-collapse collapse navbar-responsive-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/boot3">Home</a></li>
-					<li><a href="#">Services</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services&nbsp;<strong class="caret"></strong></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">Web Design</a>
+								<a href="#">Web Development</a>
+								<a href="#">SEO</a>
+							</li>
+							<li class="divider"></li>
+							<li class="dropdown-header">More Services</li>
+							<li><a href="#">Domain Architect</a></li>
+							<li><a href="#">Database Design</a></li>
+						</ul>
+					</li>
 				</ul>
 				
 				<form class="navbar-form pull-left">
@@ -24,28 +43,227 @@ You have navigated to index.html good job.
 				</form>
 				
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;My Account&nbsp;<strong class="caret"></strong></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a>
+							</li>
+							
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+							</li>
+							
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-briefcase"></span> Billing</a>
+							</li>
+							
+							<!-- horizontal divider -->
+							<li class="divider"></li>
+							
+							<li>
+								<a href="#"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+							</li>
+						</ul> <!-- end class dropdown-menu -->
+					</li>
 				</ul>
 			</div>
 		</div>
 	</div> <!-- end navbar -->
 	
 	<div class="carousel slide" id="myCarousel">
+	
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li data-slide-to="1" data-target="myCarousel"></li>
+			<li data-slide-to="2" data-target="myCarousel"></li>
+		</ol>
+		
+		<!-- Wrapper for the slides -->
+		<div class="carousel-inner">
+			<div class="item active" id="slide1">
+				<!-- Could add img tag here, he is using background images in CSS -->
+				<!-- <img src="some_image.jpg"> -->
+				<!-- <img src="{% static 'images/carousel_medium_01.png' %}" alt="medium1 image" /> -->
+				<div class="carousel-caption">
+					<h4>Bootstrap 3</h4>
+					<p>Learn how to build your first Twitter Bootstrap Website.</p>
+				</div>
+			</div>
+
+			<div class="item" id="slide2">
+				<div class="carousel-caption">
+					<h4>Foobar Squat</h4>
+					<p>Lorem impsum blah blah blah.</p>
+				</div>
+			</div>
+
+			<div class="item" id="slide3">
+				<div class="carousel-caption">
+					<h4>Whatever</h4>
+					<p>Really hate typing this stuff in here.</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Previous and Next Controls for the Carousel -->
+		<a class="left carousel-control" data-slide="prev" href="#myCarousel"><span class="icon-prev"></span></a>
+		<a class="right carousel-control" data-slide="next" href="#myCarousel"><span class="icon-next"></span></a>
 		
 	</div> <!-- end carousel -->
 	
 	<div class="row" id="bigCallout">
 		<!-- row acts as a container of 1 or more columns -->
-		
-	</div> <!-- end row -->
+		<!-- this takes up all 12 columns of the bootstrap grid -->
+		<div class="col-12">
+			
+			<!-- alert -->
+			<div class="alert alert-success alert-block fade in" id="successAlert">
+				<!--<button id="closeAlert" type="button" class="close" data-dismiss="alert">&times;</button>-->
+				<!-- By removing data-dismiss, and adding a jQuery function on the closeAlert button, 
+				this now works entirely with jQuery and provides a smoother, repeatble beh -->
+				<button id="closeAlert" type="button" class="close">&times;</button>
+				<h4>Success!</h4><p>You made this element display by using jQuery. Click x to close.</p>
+			</div>
+			<!-- end alert-->
+
+			<!-- visible-sm = only see this well if the deivce is small (up to 768px in width) -->
+			<div class="well well-small visible-sm">
+				<!-- btn-block = span the full width of the parent element  -->
+				<a href="#" class="btn btn-large btn-block btn-default">
+					<span class="glyphicon glyphicon-phone"></span>&nbsp;Give us a call!</a>
+			</div>
+			
+			<div class="well">
+				<div class="page-header">
+					 <!-- add the <small> section to create sub-header -->
+					 <h1>A Fancy Header<small>&nbsp;A subheader for extra awesomeness.</small></h1> 
+				</div>
+				
+				<p class="lead">Some solid leading copy blah blah blah.</p>
+				
+				<a href="#" class="btn btn-large btn-primary" id="alertMe">A nice big button.</a>
+				<a href="#" class="btn btn-link">A link that acts like a button.</a>
+			</div>
+		</div>
+	</div> <!-- end callout -->
 	
-	<div class="row" id="featuresHeading">
+	<div class="row" id="featuresHeading"></div>
+		<div class="col-12">
+			<h2>More Features</h2><p class="lead">Bicycle rights 8-bit crucifix, williamsburg gluten-free kombucha 
+			disrupt whatever vegan YOLO small batch wayfarers echo park kogi cred. Occupy irony twee +1, green juice 
+			shoreditch 90's man bun cronut street art franzen keytar keffiyeh gochujang deep v.</p>
+		</div>
+	<div class="row" id="features">
+		<!-- section 4 columsn wide, maintains layout until really really small -->
+		<div class="col-sm-4 feature">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Markup with HTML5</h3>
+				</div>
+				<img src="{% static "images/badge_html5.jpg" %}" alt="HTML5" class="img-circle">
+				<p>Neutra celiac chillwave, kickstarter put a bird on it green juice vinyl retro food truck cold-pressed hashtag slow-carb. Shoreditch put a bird on it ugh keytar franzen.</p>
+				<a href="#" target="_blank" class="btn btn-warning btn-block">Learn to code HTML5</a>
+			</div>
+		</div>
 		
+				<div class="col-sm-4 feature">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Style with CSS3</h3>
+				</div>
+				<img src="{% static "images/badge_css3.jpg" %}" alt="HTML5" class="img-circle">
+				<p>Neutra celiac chillwave, kickstarter put a bird on it green juice vinyl retro food truck cold-pressed hashtag slow-carb. Shoreditch put a bird on it ugh keytar franzen.</p>
+				<a href="#" target="_blank" class="btn btn-danger btn-block">Style with CSS3</a>
+			</div>
+		</div>
+
+
+		<div class="col-sm-4 feature">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Framework by Bootstrap3</h3>
+				</div>
+				<img src="{% static "images/badge_bootstrap.jpg" %}" alt="HTML5" class="img-circle">
+				<p>Neutra celiac chillwave, kickstarter put a bird on it green juice vinyl retro food truck cold-pressed hashtag slow-carb. Shoreditch put a bird on it ugh keytar franzen.</p>
+				<a href="#" target="_blank" class="btn btn-info btn-block">More Bootstrap</a>
+			</div>
+		</div>
+
 	</div>
 	
-	<div class="row" id="features"></div>
-	
-	<div class="row" id="moreInfo"></div>
+	<div class="row" id="moreInfo">
+		<div class="col-sm-6">
+			<h3>Neat Tabbable Content</h3>
+			<div class="tabbable">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+					<li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab1">
+						<h4><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Our Location&nbsp;<small>More like our favourite surf spot.</small></h4>
+						
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12543.379791044974!2d-84.8687948!3d38.1902756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sen!2sus!4v1466787285308" 
+						width="100%" height="200" frameborder="1" style="border:1" allowfullscreen></iframe>
+						
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+						sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+						magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+						quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+						ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+						dolor in hendrerit in vulputate velit esse molestie consequat,
+						vel illum dolore eu feugiat nulla facilisis at vero eros et
+						accumsan et iusto odio dignissim qui blandit praesent luptatum
+						zzril delenit augue duis dolore te feugait nulla facilisi.
+						Nam liber tempor cum soluta nobis eleifend option congue
+						nihil imperdiet doming id quod mazim placerat facer possim
+						assum. Typi non habent claritatem insitam; est usus legentis
+						in iis qui facit eorum claritatem. Investigationes
+						demonstraverunt lectores legere me lius quod ii legunt saepius.
+						Claritas est etiam processus dynamicus, qui sequitur mutationem
+						consuetudium lectorum. Mirum est notare quam littera gothica,
+						quam nunc putamus parum claram, anteposuerit litterarum formas
+						humanitatis per seacula quarta decima et quinta decima. Eodem
+						modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+						in futurum.</p>
+					</div>
+					<div class="tab-pane" id="tab2">
+						<h4>A Left Floated Picture&nbsp;<small>Using Placehold.it</small></h4>
+						
+						<img src="http://placehold.it/140x100" class="thumbnail pull-left"></img>
+						
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+						sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+						magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+						quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+						ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+						dolor in hendrerit in vulputate velit esse molestie consequat,
+						vel illum dolore eu feugiat nulla facilisis at vero eros et
+						accumsan et iusto odio dignissim qui blandit praesent luptatum
+						zzril delenit augue duis dolore te feugait nulla facilisi.
+						Nam liber tempor cum soluta nobis eleifend option congue
+						nihil imperdiet doming id quod mazim placerat facer possim
+						assum. Typi non habent claritatem insitam; est usus legentis
+						in iis qui facit eorum claritatem. Investigationes
+						demonstraverunt lectores legere me lius quod ii legunt saepius.
+						Claritas est etiam processus dynamicus, qui sequitur mutationem
+						consuetudium lectorum. Mirum est notare quam littera gothica,
+						quam nunc putamus parum claram, anteposuerit litterarum formas
+						humanitatis per seacula quarta decima et quinta decima. Eodem
+						modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+						in futurum.</p>
+						
+						<hr />
+						
+						<a href="#myModal" role="button" class="btn btn-warning" data-taggle="modal">
+							<span class="glyphicon glyphicon-hand-up"></span>&nbsp;Click for a Modal Window!</a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<div class="row" id="moreCourses"></div>
 	
